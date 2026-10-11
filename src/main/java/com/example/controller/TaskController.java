@@ -1,10 +1,12 @@
 package com.example.controller;
 
 import com.example.model.Task;
+import com.example.dto.TaskPageResponse;
 import com.example.service.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,8 +27,11 @@ public class TaskController {
     }
 
     @GetMapping
-    public List<Task> getAll() {
-        return taskService.getAll();
+    public TaskPageResponse getAll(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "10") int size) {
+
+        return taskService.getPage(page, size);
     }
 
     @GetMapping("/{id}")
