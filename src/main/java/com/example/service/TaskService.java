@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.model.Task;
-import com.example..dto.TaskPageResponse;
+import com.example.dto.TaskPageResponse;
 
 import org.springframework.stereotype.Service;
 
