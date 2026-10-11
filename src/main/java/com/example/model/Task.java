@@ -1,8 +1,18 @@
 package com.example.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
 public class Task {
     private Long id;
+
+    @NotBlank(message = "Task title cannot be blank")
     private String title;
+
+    @Pattern(
+        regexp = "OPEN|IN_PROGRESS|DONE",
+        message = "Status must be OPEN, IN_PROGRESS, or DONE"
+    )
     private String status;
 
     public Task() {
