@@ -1,6 +1,6 @@
 package com.example.model;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public class Task {
@@ -9,9 +9,11 @@ public class Task {
     @NotBlank(message = "Task title cannot be blank")
     private String title;
 
+    
+    @NotNull(message = "Status is required")
     @Pattern(
-        regexp = "OPEN|IN_PROGRESS|DONE",
-        message = "Status must be OPEN, IN_PROGRESS, or DONE"
+        regexp = "TODO|IN_PROGRESS|COMPLETED",
+        message = "Status must be TODO, IN_PROGRESS, or COMPLETED"
     )
     private String status;
 
