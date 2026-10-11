@@ -1,4 +1,4 @@
-package com.example;
+package com.example.taskapi;
 
 import com.example.dto.TaskPageResponse;
 import com.example.exception.GlobalExceptionHandler;
